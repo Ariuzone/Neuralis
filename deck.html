@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deck investisseurs</title>
+    <style>
+        /* Réinitialisation de base pour utiliser tout l'écran */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Empêche les barres de défilement */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif; /* Une police moderne et grasse */
+            background-color: #1a1a2e; /* Couleur de fond de sécurité */
+        }
+
+        /* --- Animation de l'arrière-plan flou --- */
+        .background-animated {
+            position: fixed;
+            top: -10%; /* Légèrement plus grand pour éviter les bords blancs lors du mouvement */
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            /* Dégradé de couleurs vives */
+            background: linear-gradient(45deg, #ff007f, #7a00ff, #00e5ff, #ff007f);
+            background-size: 400% 400%; /* Taille nécessaire pour l'animation de déplacement */
+            filter: blur(80px); /* Applique le flou puissant */
+            z-index: -1; /* Place le fond derrière le texte */
+            
+            /* Liaison de l'animation CSS */
+            animation: gradientMovement 15s ease infinite;
+        }
+
+        /* Définition des étapes de l'animation du fond */
+        @keyframes gradientMovement {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* --- Style et Animation du texte --- */
+        .text-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: white;
+            text-transform: uppercase; /* Tout en majuscules */
+            font-size: 5rem; /* Taille très grande */
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin: 0;
+            
+            /* Ajout d'une lueur initiale pour la lisibilité */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                         0 0 20px rgba(255, 255, 255, 0.5);
+            
+            /* Liaison de l'animation CSS pour le texte */
+            animation: textPulse 3s ease-in-out infinite;
+        }
+
+        /* Définition des étapes de l'animation du texte (pulsation lumineuse) */
+        @keyframes textPulse {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                             0 0 20px rgba(255, 255, 255, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1),
+                             0 0 40px rgba(0, 229, 255, 0.8),
+                             0 0 60px rgba(0, 229, 255, 0.6);
+                transform: scale(1.02); /* Léger grossissement pour accentuer l'effet */
+            }
+        }
+
+        /* Optimisation pour les écrans mobiles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-animated"></div>
+
+    <div class="text-container">
+        <h1>En cours<br>de conception</h1>
+      <a href="neuralis.html">Revenir en arrière</a>
+    </div>
+
+</body>
+</html>
